@@ -35,6 +35,3 @@ owrt 为多平台通用，可编译高通平台，但没有NSS驱动。
 https://github.com/LiBwrt/openwrt-6.x.git
 
 https://github.com/qosmio/openwrt-ipq.git
-
-#
-[![Stargazers over time](https://starchart.cc/VIKINGYFY/immortalwrt.svg?variant=adaptive)](https://starchart.cc/VIKINGYFY/immortalwrt)
