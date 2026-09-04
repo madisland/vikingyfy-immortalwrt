@@ -21,10 +21,10 @@ which otherwise makes all RX rates look like non-data frames.
 +	struct ath11k_sta *arsta = ath11k_sta_to_arsta(sta);
  	struct ath11k_base *ab = ar->ab;
 +	struct rate_info *txrate = NULL;
+ 	unsigned int start;
+ 	u64 rx_bytes;
  
- 	if (!ab->nss.stats_enabled)
- 		return;
-@@ -3567,6 +3569,18 @@ void ath11k_nss_update_sta_stats(struct
+@@ -3574,6 +3576,18 @@ void ath11k_nss_update_sta_stats(struct
  		peer->nss.nss_stats->rx_bytes;
  	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_RX_BYTES);
  
@@ -43,7 +43,7 @@ which otherwise makes all RX rates look like non-data frames.
  	if (peer->nss.nss_stats->rxrate.legacy || peer->nss.nss_stats->rxrate.nss) {
  		if (peer->nss.nss_stats->rxrate.legacy) {
  			sinfo->rxrate.legacy = peer->nss.nss_stats->rxrate.legacy;
-@@ -3602,7 +3616,10 @@ void ath11k_nss_update_sta_rxrate(struct
+@@ -3609,7 +3623,10 @@ void ath11k_nss_update_sta_rxrate(struct
  	if (!ab->nss.enabled)
  		return;
  

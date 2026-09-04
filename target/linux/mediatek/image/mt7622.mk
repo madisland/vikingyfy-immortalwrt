@@ -77,7 +77,7 @@ define Device/smartrg_sdg-841-t6
   DEVICE_PACKAGES := e2fsprogs f2fsck mkf2fs
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   DEVICE_MODEL := SDG-841-t6
-  DEVICE_DTS := mt7622-smartrg-SDG-841-t6
+  DEVICE_DTS := mt7622-smartrg-sdg-841-t6
   DEVICE_PACKAGES += kmod-mt7915e kmod-mt7915-firmware
 endef
 TARGET_DEVICES += smartrg_sdg-841-t6
@@ -333,7 +333,6 @@ endef
 TARGET_DEVICES += mediatek_mt7622-rfb1-ubi
 
 define Device/netgear_wax206
-  $(Device/dsa-migration)
   DEVICE_VENDOR := NETGEAR
   DEVICE_MODEL := WAX206
   DEVICE_DTS := mt7622-netgear-wax206
